@@ -1,27 +1,24 @@
 {
-    "name": "sparse-matrix-operations",
-    "version": "1.0.0",
-    "main": "main.js",
-    "type": "module",
-    "scripts": {
-      "start": "node main.js",
-      "test": "echo \"No tests defined\" && exit 0"
-    },
-    "repository": {
-      "type": "git",
-      "url": "https://github.com/CletusAAbugre/DSA-HW01-Sparse-Matrix.git"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "bugs": {
-      "url": "https://github.com/CletusAAbugre/DSA-HW01-Sparse-Matrix/issues"
-    },
-    "homepage": "https://github.com/CletusAAbugre/DSA-HW01-Sparse-Matrix#readme",
-    "dependencies": {
-      "path": "^0.12.7",
-      "readline": "^1.3.0"
-    }
+  "name": "sparse-matrix-operations",
+  "version": "1.0.0",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node main.js",
+    "test": "echo 'No tests defined' && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CletusAAbugre/DSA-HW01-Sparse-Matrix.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "readline": "^1.3.0"
   }
+}
+
   
   
