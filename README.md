@@ -14,54 +14,54 @@ The project supports basic operations like loading matrices from files, adding, 
 - ✖️ Multiply two sparse matrices
 - 💾 Save the result to an output file
 
----
+## How to Run the Program
 
-## 📁 Project Structure
+### Step 1: Install Node Modules
 
-DSA-HW01-Sparse-Matrix/ └── dsa/ └── sparse_matrix/ └── code/ └── src/ ├── main.js # Main script to run operations ├── sparse_matrix.js # SparseMatrix class ├── package.json # Project dependencies ├── sample_inputs/ # Input matrix files │ ├── matrixfile1.txt │ ├── matrixfile3.txt └── result.txt # Output file (auto-generated)
-
- How to Run the Program
-
- Step 1: Install Node Modules
-
-Open your terminal, go into the `src/` folder, and run:
-
-
+```
 npm install
-     Commands to run the file
-     ➕ To Add Matrices:
+```
 
-npm start -- add ./sample_inputs/matrixfile1.txt ./sample_inputs/matrixfile3.txt result.txt
-➖ To Subtract Matrices:
-
-npm start -- sub ./sample_inputs/matrixfile1.txt ./sample_inputs/matrixfile3.txt result_sub.txt
-✖️ To Multiply Matrices:
-
-npm start -- mul ./sample_inputs/matrixfile1.txt ./sample_inputs/matrixfile3.txt result_mul.txt
-📄 Output Format
-The results are saved in a text file you choose. The format looks like this:
+### Step 2: Execution
 
 
-rows=7
-cols=5000
-(6, 13, 672)
-(6, 81, 1022)
-(6, 178, -630)
-(6, 351, -204)
-(6, 1000, 679)
-(6, 1624, 637)
-(6, 2278, -384)
-(6, 2394, 415)
-(6, 2763, -20)
-(6, 4003, 817)
-(6, 4285, -657)
-The rows= and cols= lines show the matrix size.
+```
+node main.js <operation> <file1_name> <file2_name> <result_file>
+```
 
-Each row after that shows a non-zero value and where it appears in the matrix:
-(rowIndex, colIndex, value)
+#### Note: the operation section has three options: 
+- ```add``` (for addition)
+- ```subtract``` (for substraction)
+- ```multiply``` (for multiplication)
 
-How to View the Output
-cat result_add.txt
-cat result_subtract.txt
-cat result_mul.txt
+Here is a existing example of an addition:
+```
+node main.js add matrixfile1.txt matrixfile3.txt result.txt
+```
+#### Note: The sample files are all in the ```sample_inputs``` folder as said in the instructions. If you want to add a ew one, add it in the folder and in the execution command, just put the name of the file, not the absolute path.
+
+### Step 3: Open result
+Look for the file with the name that you put as a result file and open it and voila!
+Example:
+```
+rows=4795
+cols=4795
+(0, 775, 517)
+(0, 1425, -127)
+(0, 8463, -290)
+(0, 2617, -394)
+(0, 441, -692)
+(0, 6598, 292)
+(0, 5177, -840)
+(0, 3791, 289)
+(0, 1444, -642)
+(0, 3458, -893)
+(0, 4254, 723)
+(0, 990, -580)
+(0, 9041, -945)
+(0, 2324, -596)
+(0, 1194, -1005)
+...
+```
+
 
