@@ -105,26 +105,28 @@ class SparseMatrix {
 
   multiply(other) {
     if (this.cols !== other.rows) {
-      throw new Error("Invalid dimensions for multiplication");
+      throw new Error("Matrix dimensions do not match for multiplication.");
     }
-
+  
     const result = new SparseMatrix(this.rows, other.cols);
-
-    // Only iterate over non-zero elements
-    for (const [row1, rowData1] of this.data) {
-      for (const [col1, val1] of rowData1) {
-        const rowData2 = other.data.get(col1);
-        if (rowData2) {
-          for (const [col2, val2] of rowData2) {
-            const current = result.getElement(row1, col2);
-            result.setElement(row1, col2, current + val1 * val2);
-          }
+  
+    for (const [rowA, rowAData] of this.data) {
+      for (const [k, valA] of rowAData) {
+        const rowBData = other.data.get(k);
+        if (!rowBData) continue;
+  
+        for (const [colB, valB] of rowBData) {
+          const rowResult = result.data.get(rowA) || new Map();
+          rowResult.set(colB, (rowResult.get(colB) || 0) + valA * valB);
+          result.data.set(rowA, rowResult); // Set once per row
         }
       }
     }
-
+  
     return result;
   }
+  
+  
   toString() {
     let result = `rows=${this.rows}\ncols=${this.cols}\n`;
     for (const [row, rowData] of this.data) {
@@ -146,8 +148,8 @@ async function main() {
 
   try {
     const operation = process.argv[2];
-    const matrix1 = await SparseMatrix.fromFile(process.argv[3]);
-    const matrix2 = await SparseMatrix.fromFile(process.argv[4]);
+    const matrix1 = await SparseMatrix.fromFile(`.\\sample_inputs\\${process.argv[3]}`);
+    const matrix2 = await SparseMatrix.fromFile(`.\\sample_inputs\\${process.argv[4]}`);
     const outputFile = process.argv[5];
 
     let result;
