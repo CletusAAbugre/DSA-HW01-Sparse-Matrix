@@ -37,7 +37,6 @@ node main.js <operation> <file1_name> <file2_name> <result_file>
 Here is a existing example of an addition:
 ```
 node main.js add .\sample_inputs\matrixfile1.txt .\sample_inputs\matrixfile3.txt result1-2.txt
-Result written to result1-2.txt
 ```
 #### Note: The sample files are all in the ```sample_inputs``` folder as said in the instructions 
 
