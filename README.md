@@ -36,9 +36,9 @@ node main.js <operation> <file1_name> <file2_name> <result_file>
 
 Here is a existing example of an addition:
 ```
-node main.js add .\sample_inputs\matrixfile1.txt .\sample_inputs\matrixfile3.txt result1-2.txt
+node main.js add matrixfile1.txt matrixfile3.txt result.txt
 ```
-#### Note: The sample files are all in the ```sample_inputs``` folder as said in the instructions 
+#### Note: The sample files are all in the ```sample_inputs``` folder as said in the instructions. If you want to add a ew one, add it in the folder and in the execution command, just put the name of the file, not the absolute path.
 
 ### Step 3: Open result
 Look for the file with the name that you put as a result file and open it and voila!
